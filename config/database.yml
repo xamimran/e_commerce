@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: e_commerce
+  database: e_commerce_development
   pool: 5
   username: dev
   password: Usama8991
@@ -47,7 +47,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: e_commerce
+  database: e_commerce_test
   pool: 5
   username: dev
   password: Usama8991
@@ -56,7 +56,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: e_commerce
+  database: e_commerce_production
   pool: 5
   username: dev
   password: Usama8991

@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(version: 2022_10_25_122708) do
     t.integer "cat_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "categories_items", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "item_id"
-    t.bigint "category_id"
+    t.integer "item_id"
+    t.integer "category_id"
     t.index ["category_id"], name: "index_categories_items_on_category_id"
     t.index ["item_id"], name: "index_categories_items_on_item_id"
   end
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2022_10_25_122708) do
     t.string "description", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2022_10_25_122708) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -71,9 +71,4 @@ ActiveRecord::Schema.define(version: 2022_10_25_122708) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "users"
-  add_foreign_key "categories_items", "categories"
-  add_foreign_key "categories_items", "items"
-  add_foreign_key "items", "users"
-  add_foreign_key "orders", "users"
 end
