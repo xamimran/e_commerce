@@ -58,6 +58,6 @@ production:
   encoding: unicode
   database: e_commerce_production
   pool: 5
-  username: postgres
-  password: postgres
+  username: dev
+  password: Usama8991
   timeout: 5000
